@@ -240,7 +240,7 @@ There are two main scripts to help you easily set up and stream from TEVS camera
 
     Example command:
     ```
-    root@rzv2h-evk-ver1:~# gstreamer-init-tevs.sh 0 640x480
+    root@rzv2h-evk-ver1:~# sh gstreamer-init-tevs.sh 0 640x480
     ```
 
 - gstreamer-init-tevs-4cam.sh
@@ -255,5 +255,5 @@ There are two main scripts to help you easily set up and stream from TEVS camera
 
     Example command:
     ```
-    root@rzv2h-evk-ver1:~# gstreamer-init-tevs-4cam.sh 640x480
+    root@rzv2h-evk-ver1:~# sh gstreamer-init-tevs-4cam.sh 640x480
     ```
