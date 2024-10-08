@@ -1,6 +1,6 @@
 # Renesas-Camera-Driver
 
-[![Technexion](https://github.com/TechNexion-Vision/TEV-Jetson_Camera_driver/assets/28101204/08cd2fa9-7333-4a16-819f-c69a3dbf290c)](https://www.technexion.com/products/embedded-vision/)
+[![Technexion](https://github.com/user-attachments/assets/c78973b8-4967-4d72-8082-5d6b9ef5dc99)](https://www.technexion.com/products/embedded-vision/)
 
 [![Producer: Technexion](https://img.shields.io/badge/Producer-Technexion-blue.svg)](https://www.technexion.com)
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
@@ -46,6 +46,8 @@ TEVS-RPI22 Adaptor for TEVS camera
 <a href="https://www.technexion.com/products/embedded-vision/mipi-csi2/evk/tevs-ar0144-c-s33-ir-rpi22/" target="_blank">
  <img src="https://www.technexion.com/wp-content/uploads/2023/11/tevs-ar0144-c-s33-ir-rpi22.png" width="400" height="400" />
 </a>
+
+[**Instructional Video**](https://youtu.be/W9p1uqYS8lg?list=PLdUUBf0zT0W8feLAI_IhhhCr6w073zJ-L&t=47)
 
 ---
 
