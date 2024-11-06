@@ -123,7 +123,7 @@ Please refernece "[How to build RZ/V2H AI SDK Source Code](https://renesas-rz.gi
 
 4. Change [graphics library to unrestricted version](https://renesas-rz.github.io/rzv_ai_sdk/3.00/howto_build_aisdk_v2h.html#A1). **(Optional)**
 
-   - Donwload [RTK0EF0045Z14001ZJ-v1.2.1_rzv_EN.zip](https://www.renesas.com/us/en/document/sws/rz-mpu-graphics-library-v121-unrestricted-version-verified-linux-package-rzv2l-and-rzv2h?r=1823516)
+   - Download [RTK0EF0045Z14001ZJ-v1.2.1_rzv_EN.zip](https://www.renesas.com/us/en/document/sws/rz-mpu-graphics-library-v121-unrestricted-version-verified-linux-package-rzv2l-and-rzv2h?r=1823516)
 
    - Remove the original graphics library
         ```shell
