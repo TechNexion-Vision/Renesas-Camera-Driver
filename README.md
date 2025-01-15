@@ -58,7 +58,7 @@ We provide a pre-built image to simplify using TEVS camera on RZ/V2H-EVK.
 
 1. Download the image from the following link.
 
-   [RZ/V2H + Yocto-AI-v3.0 + TEVS](https://download.technexion.com/demo_software/EVK/Renesas/RZ-V2H/DiskImage/rzv2h-evk-ver1_yocto-ai-v3_tevs_demo_20240828.zip)
+   [RZ/V2H + Yocto-AI-v5.0 + TEVS](https://download.technexion.com/demo_software/EVK/Renesas/RZ-V2H/DiskImage/rzv2h-evk-ver1_yocto-ai-v5_tevs_demo_20250115.zip)
 
 2. Install necessary tool.
 
@@ -70,31 +70,31 @@ We provide a pre-built image to simplify using TEVS camera on RZ/V2H-EVK.
 3. Extract the pre-built image.
 
    ```shell
-   $ unzip rzv2h-evk-ver1_yocto-ai-v3_tevs_demo_20240828.zip
+   $ unzip rzv2h-evk-ver1_yocto-ai-v5_tevs_demo_20250115.zip
    ```
 
 4. Flash SD Card with the image.
 
    - Enter the pre-built image directory
         ```shell
-        $ cd ./rzv2h-evk-ver1_yocto-ai-v3_tevs_demo_20240828
+        $ cd ./rzv2h-evk-ver1_yocto-ai-v5_tevs_demo_20250115
         ```
    - Use `bmaptool` to flash the image to the SD card
         ```shell
         # ${device} is your device path name, such as /dev/sdb
         $ umount ${device}?
-        $ sudo bmaptool copy --bmap rzv2h-evk-ver1_yocto-ai-v3_tevs_demo_20240828.rootfs.wic.bmap \
-        rzv2h-evk-ver1_yocto-ai-v3_tevs_demo_20240828.rootfs.wic.gz ${device}
+        $ sudo bmaptool copy --bmap rzv2h-evk-ver1_yocto-ai-v5_tevs_demo_20250115.rootfs.wic.bmap \
+        rzv2h-evk-ver1_yocto-ai-v5_tevs_demo_20250115.rootfs.wic.gz ${device}
         ```
 
 ---
 
 #### Method 2 - Build the RZ/V2H AI SDK Source Code with Technexion patch
 
-Please refernece "[How to build RZ/V2H AI SDK Source Code](https://renesas-rz.github.io/rzv_ai_sdk/3.00/howto_build_aisdk_v2h.html#step1)" and follow the steps below:
+Please refernece "[How to build RZ/V2H AI SDK Source Code](https://renesas-rz.github.io/rzv_ai_sdk/5.00/howto_build_aisdk_v2h.html#step1)" and follow the steps below:
 
 1. Download the SDK source code.
-   - [RZ/V2H AI SDK Source Code](https://www.renesas.com/us/en/document/sws/rzv2h-ai-sdk-v300-source-code)
+   - [RZ/V2H AI SDK Source Code](https://www.renesas.com/us/en/document/sws/rzv2h-ai-sdk-v500-source-code)
 
 2. Install necessary tool.
 
@@ -110,75 +110,41 @@ Please refernece "[How to build RZ/V2H AI SDK Source Code](https://renesas-rz.gi
 
    - Unpack the source code archive
         ```shell
-        $ unzip RTK0EF0180F03000SJ_linux-src.zip
+        $ unzip RTK0EF0180F05000SJ_linux-src.zip
         ```
    - Create a folder for the Yocto recipe package
         ```shell
-        $ mkdir -p ./yocto_ai_v3.00
+        $ mkdir -p ./yocto_ai_v5.00
         ```
    - Extract the Yocto recipe package to the specified directory
         ```shell
-        $ tar zxvf rzv2h_ai-sdk_yocto_recipe_v3.00.tar.gz -C ./yocto_ai_v3.00
+        $ tar zxvf rzv2h_ai-sdk_yocto_recipe_v5.00.tar.gz -C ./yocto_ai_v5.00
         ```
 
-4. Change [graphics library to unrestricted version](https://renesas-rz.github.io/rzv_ai_sdk/3.00/howto_build_aisdk_v2h.html#A1). **(Optional)**
-
-   - Download [RTK0EF0045Z14001ZJ-v1.2.1_rzv_EN.zip](https://www.renesas.com/us/en/document/sws/rz-mpu-graphics-library-v121-unrestricted-version-verified-linux-package-rzv2l-and-rzv2h?r=1823516)
-
-   - Remove the original graphics library
-        ```shell
-        $ rm -rf ./yocto_ai_v3.00/meta-rz-features/meta-rz-graphics
-        ```
-   - Unpack the source code archive
-        ```shell
-        $ unzip RTK0EF0045Z14001ZJ-v1.2.1_rzv_EN.zip
-        ```
-   - Extract unrestricted version to the specified directory
-        ```shell
-        $ tar zxvf RTK0EF0045Z14001ZJ-v1.2.1_rzv_EN/meta-rz-features_graphics_v1.2.1.tar.gz -C ./yocto_ai_v3.00
-        ```
-
-5. Get TEVS camera driver patch.
+4. Get TEVS camera driver patch.
 
    - Clone Technexion renessas camera driver repository
         ```shell
-        $ git clone -b ai-sdk-v3.00 https://github.com/TechNexion-Vision/Renesas-Camera-Driver.git
+        $ git clone -b ai-sdk-v5.00 https://github.com/TechNexion-Vision/Renesas-Camera-Driver.git
         ```
    - Copy the driver patch to the Yocto recipe directory
         ```shell
-        $ cp ./Renesas-Camera-Driver/TechNexion_TEVS.patch ./yocto_ai_v3.00
+        $ cp ./Renesas-Camera-Driver/TechNexion_TEVS.patch ./yocto_ai_v5.00
         ```
 
-6. Apply patch files to fix link error.
-
-   - Enter the Yocto recipe directory
-        ```shell
-        $ cd ./yocto_ai_v3.00
-        ```
-   - Download and apply the required  patch files
-        ```shell
-        $ wget https://github.com/renesas-rz/rzv_ai_sdk/releases/download/v3.00/0001-recipes-debian-buster-glibc-Update-version-from-2.28.patch
-        $ wget https://github.com/renesas-rz/rzv_ai_sdk/releases/download/v3.00/0001-rz-common-recipes-debian-buster-glibc-update-to-v2.28-10+deb10u4.patch
-        $ wget https://github.com/renesas-rz/rzv_ai_sdk/releases/download/v3.00/61835_update_url_gst_common.patch
-
-        $ patch -d ./meta-renesas -p1 < 0001-recipes-debian-buster-glibc-Update-version-from-2.28.patch
-        $ patch -d ./meta-renesas -p1 < 0001-rz-common-recipes-debian-buster-glibc-update-to-v2.28-10+deb10u4.patch
-        $ patch -d ./meta-rz-features/meta-rz-codecs -p1 < 61835_update_url_gst_common.patch
-        ```
-
-7. Apply TEVS camera driver patch.
+5. Apply TEVS camera driver patch.
 
    ```shell
    $ patch -p1 -i ./TechNexion_TEVS.patch
    ```
 
-8. Initialize a build in poky.
+6. Initialize a build in poky.
 
    ```shell
    $ TEMPLATECONF=${PWD}/meta-renesas/meta-rzv2h/docs/template/conf/ source poky/oe-init-build-env
    ```
 
-9. Add layers to `bblayers.conf`.
+7. Add layers to `bblayers.conf`.
 
     ```shell
     $ bitbake-layers add-layer ../meta-rz-features/meta-rz-graphics
@@ -188,19 +154,20 @@ Please refernece "[How to build RZ/V2H AI SDK Source Code](https://renesas-rz.gi
     $ bitbake-layers add-layer ../meta-tn
     ```
 
-10. Apply a patch fot Tesseract Open Source OCR Engine.
+8.  Apply the patch files.
 
     ```shell
     $ patch -p1 < ../0001-tesseract.patch
+    $ patch -p1 < ../0002-sd-image-size-16gb.patch
     ```
 
-11. Build the kerenl files.
+9. Build the kerenl files.
 
     ```shell
     $ MACHINE=rzv2h-evk-ver1 bitbake core-image-weston
     ```
 
-12. Flash SD Card with the image.
+10. Flash SD Card with the image.
 
     - Enter the Yocto build images directory
         ```shell
