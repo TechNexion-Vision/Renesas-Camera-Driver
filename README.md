@@ -45,7 +45,7 @@ TEVS-RPI22 Adaptor for TEVS camera
 > Connect TEVS camera and TEVS-RPI22 adaptor to **RZ/V2H-EVK - "CN7/CN8/CN10/CN9"** directly.
 
 <a href="https://www.technexion.com/products/embedded-vision/mipi-csi2/evk/tevs-ar0144-c-s33-ir-rpi22/" target="_blank">
- <img src="https://www.technexion.com/wp-content/uploads/2023/11/tevs-ar0144-c-s33-ir-rpi22.png" width="400" height="400" />
+ <img src="https://www.technexion.com/wp-content/uploads/2024/12/tevs-ar0144-c-s33-ir-rpi22.png" width="400" height="400" />
 </a>
 
 [**Instructional Video**](https://youtu.be/W9p1uqYS8lg?list=PLdUUBf0zT0W8feLAI_IhhhCr6w073zJ-L&t=47)
@@ -188,7 +188,7 @@ Please refernece "[How to build RZ/V2H AI SDK Source Code](https://renesas-rz.gi
     $ bitbake-layers add-layer ../meta-tn
     ```
 
-10. Apply a patch fot Tesseract Open Source OCR Engine.
+10. Apply a patch for Tesseract Open Source OCR Engine.
 
     ```shell
     $ patch -p1 < ../0001-tesseract.patch
