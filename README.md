@@ -17,7 +17,7 @@
 
 ## Support System Version
 
-- [RZ/V2H AI SDK v3.00](https://www.renesas.com/us/en/document/sws/rzv2h-ai-sdk-v300-source-code?r=25470141)
+- [RZ/V2H AI SDK v3.00](https://renesas-rz.github.io/rzv_ai_sdk/3.00/)
 
 ## Support Camera Modules
 
