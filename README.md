@@ -22,15 +22,14 @@
 ## Support Camera Modules
 
 #### MIPI Cameras
-- TEVS-AR0144-C
-- TEVS-AR0145-M
-- TEVS-AR0234-C
-- TEVS-AR0521-C
-- TEVS-AR0522-C
-- TEVS-AR0522-M
-- TEVS-AR0821-C
-- TEVS-AR0822-C
-- TEVS-AR1335-C
+- TEVS-AR0144
+- TEVS-AR0145
+- TEVS-AR0234
+- TEVS-AR0521
+- TEVS-AR0522
+- TEVS-AR0821
+- TEVS-AR0822
+- TEVS-AR1335
 
 [More Camera Products Details...](https://www.technexion.com/products/embedded-vision)
 
@@ -58,7 +57,7 @@ We provide a pre-built image to simplify using TEVS camera on RZ/V2H-EVK.
 
 1. Download the image from the following link.
 
-   [RZ/V2H + Yocto-AI-v5.0 + TEVS](https://download.technexion.com/demo_software/EVK/Renesas/RZ-V2H/DiskImage/rzv2h-evk-ver1_yocto-ai-v5_tevs_demo_20250115.zip)
+   [RZ/V2H + Yocto-AI-v5.0 + TEVS](https://download.technexion.com/demo_software/EVK/Renesas/RZ-V2H/DiskImage/rzv2h-evk-ver1_yocto-ai-v5_tevs_demo_20250220.zip)
 
 2. Install necessary tool.
 
